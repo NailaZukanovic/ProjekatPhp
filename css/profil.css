@@ -1,0 +1,627 @@
+.margina{
+    margin-top:6rem ;
+    margin-bottom: 2rem;
+}
+.kontainer{
+    display: flex;
+}
+
+.podaci{
+    flex: 6!important;
+    
+
+   
+}
+.profil{
+ 
+    flex: 2!important;
+    padding: 3rem 0.1rem;
+    background: linear-gradient(#43b9dc, #34d3b4);
+
+
+}
+.center1{
+margin-left: 4rem;
+justify-content: center;
+display: flex;
+}
+.profil img{
+    width: 220px;
+    height: 220px;
+    border-radius: 200px;
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.1);
+    
+}
+
+.slika {
+text-align: center;
+padding-bottom: 1rem;
+}
+.profil h4{
+    color:white;
+    font-size: 2.7rem;
+    text-align: center;
+}
+
+.informacije{
+    padding-left: 2rem;
+    padding-top: 1rem;
+ margin-left: 3.5rem;
+   overflow: hidden;
+    letter-spacing: 0.2px;
+    color:white;
+}
+.informacije p{
+    padding-left: 1.3rem;
+    
+}
+.informacije p:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-left: 3px solid black;
+    transition: 0.4s all ease-in;
+}
+
+
+.id1{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.profil h2{
+    font-size:2.5rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color:white;
+    padding: 0.6rem 0;
+}
+
+.btn1{
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 7px;
+    text-align: center;
+    background-color: white;
+    color:black;
+    border:none;
+    cursor: pointer;
+}
+.centriraj{
+    text-align: center;
+}
+.btn1:hover{
+    background-color: #43b9dc;
+    color: white;
+    transition: 0.5s all ease-in-out;
+}
+.dropbtn1 {
+    background-color: red;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn1:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
+  
+  .dropdown2 {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown2 a:hover {background-color: #ddd;}
+
+
+  #sidebar{
+    padding-left: 0.7rem;
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    color:white;
+    overflow: hidden;
+ 
+  
+    transition: all 0.3s ease;
+  }
+
+
+  #sidebar .list-items{
+    position: relative;
+    color:white;
+    padding-top: 5px;
+    list-style: none;
+  }
+  #sidebar .list-items li{
+    line-height: 50px;
+  
+    
+    transition: all 0.3s ease;
+    border-left: 3px solid inherit;
+    font-size: 1.7rem;
+    
+  }
+  
+  #sidebar .list-items li :hover a{
+    
+    background-color:#47c2e7;
+    transition: 0.3s linear;
+    border-left: 3px solid black!important;  
+    
+  }
+  
+
+  #sidebar .list-items li a{
+  
+    line-height: 50px;
+  width: 100%;
+   color:white;
+   padding: 1rem;
+    transition: all 0.3s ease;
+    border-left: 3px solid inherit;
+  }
+
+  #sidebar .list-items li:hover {
+    background-color:#48d1fb;
+    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.1);
+    transition: 0.3s linear;
+    
+     }
+   
+  #sidebar .list-items li:hover #prvi {
+ 
+    border-left: 3px solid black;
+    color: black;
+    transition: 0.4s all ease-in;
+     }
+   
+  #sidebar .list-items li ul li:hover a {
+ 
+    text-decoration: underline black;
+    color: black;
+    transition: 0.4s all ease-in;
+    border-left: 3px solid black;
+    
+     }
+   
+
+
+    #sidebar .list-items li ul li a{
+      margin-left:2rem;
+      font-size: 0.9rem;
+      font-weight: normal;
+    }
+    
+    #sidebar .list-items li:first-child{
+      border-top: none;
+    }
+  
+    #sidebar .list-items li a i{
+      margin-right: 20px;
+    }
+  
+  nav ul li ul{
+      list-style-type: none;
+      font-size: 1.4rem;
+  }
+  nav ul li ul li a{
+    
+      font-size: 1.4rem!important;
+  }
+nav ul ul {
+    position: static;
+    display: none;
+  }
+  
+ 
+  nav ul li :hover span {
+   
+    color:rgb(5, 5, 5);
+  }
+
+  
+  nav ul li a span{
+  margin-top: 1rem;
+    position: absolute;
+    right: 20px;
+    font-size: 1.2rem;
+  
+  }
+  nav ul li a  span{
+  margin-top: 1rem;
+    position: absolute;
+    right: 20px;
+    font-size: 22px;
+    transform: translate(-50%);
+    transition: transform 0.4s;
+  
+  }
+  
+  nav ul .serv-show.show{
+  display: block;
+  }
+  nav ul .z-show.show{
+  display: block;
+  }
+  nav ul li a span.first.rotate{
+    
+    transform: translateY(-10%) rotate(-180deg);
+    }
+  nav ul li a span.second.rotate{
+    
+    transform: translateY(-10%) rotate(-180deg);
+    }
+
+#sidebar a:active{
+    border:none;
+}
+#sidebar a:focus{
+border: none;
+}
+
+.flex{
+    display: flex;
+}
+.one1{
+    flex:3;
+text-align: center;
+    padding: 4rem 2rem; 
+    font-size: 2rem;
+}
+.one2{
+    flex:1;
+    padding: 2rem;
+   
+}
+.one2 img{
+    width: 270px;
+height: 270px;
+}
+
+.lekar1{
+    padding: 1rem;
+    border-bottom: 1px dotted black;
+}
+
+.imena{
+    font-size: 2.3rem;
+    color: #47c2e7;
+    font-weight: 600;
+}
+
+.zahtev2{
+  font-size: 2rem;
+}
+/*
+.zahtev2:hover{
+text-decoration: underline;
+}
+*/
+.upit{
+  font-size:1.7rem;
+  margin-left: 2.3rem;
+}
+.novo{
+  padding-left: 2.6rem;
+ 
+  padding-right: 0.6rem;
+  
+}
+.novo a:hover{
+  text-decoration: underline black;
+  color: black!important;
+  transition: 0.4s all ease-in;
+ 
+  border-left: 3px solid black;
+}
+
+.novo p :hover{
+ box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.1);
+ transition: 0.3s linear;
+ 
+}
+
+.izmeni{
+  background-color: #43b9dc;
+  color:white;
+  border-radius:14px;
+  margin:1rem 0;
+  padding:0.6rem 1.1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.izmeni:hover{
+  background-color: #34d3b4;
+  color:black;
+  transition: 0.3s linear;
+  
+}
+
+.izmeni i{
+
+  margin:0 0.5rem;
+}
+
+
+.dokflex{
+  display: flex;
+}
+
+.dokflex2{
+  flex: 2;
+  padding:0.8rem;
+
+ margin-right: 0.7rem;
+}
+.dokflex5{
+  flex: 5;
+  padding:1.8rem;
+}
+
+.pacijent{
+
+  margin: 1rem;
+  display: flex;
+  padding: 0.7rem;
+  color:white;
+  align-items: center;
+
+border-radius: 8px;
+    background-color: #34d3b4;
+  width: 100%;
+}
+
+.pacijent:hover{
+
+background-color: #43b9dc;
+transition: 0.3s linear;
+}
+
+.Vasipacijenti{
+  padding-right: 1.9rem;
+  padding-left: 1rem;
+
+  border-left: 2px dotted #43b9dc;
+  padding-bottom: 1rem;
+  border-bottom: 2px dotted #43b9dc;
+  border-top: 2px dotted #43b9dc;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.rasporedi{
+  margin:1.2rem 1rem;
+  display: flex;
+  padding: 0.7rem;
+  color:#34d3b4;
+  align-items: center;
+  font-size:1.5rem;
+
+border-radius: 8px;
+    box-shadow: 0  0  20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+
+.naslov{
+
+  font-size: 2.5rem;
+  margin:1rem 0;
+  text-align: center;
+  color:#43b9dc
+
+}
+.maliN{
+
+  font-size: 2.5rem;
+  width: 100%;
+  padding: 4rem;
+  font-weight: 500;
+  text-align: center;
+  color:black;
+  background-color:rgb(209, 208, 208) ;
+
+}
+
+
+.novost{
+
+  width: 100%;
+  margin:2.3rem 0;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+  height: 200px;
+
+  display: flex;
+  
+}
+
+.novost .naslovN{
+  font-weight: 600;
+  color:black;
+  font-size:1.4rem;
+ 
+  padding: 7px 1rem;
+
+}
+.za{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:1.6rem;
+  margin-top :1rem;
+}
+
+.div20{
+  height: 20%;
+
+}
+.div80{
+  height: 80%;
+}
+
+.div2{
+flex:2;
+padding-left: 0.4rem;
+}
+
+.div8{
+  flex: 8;
+}
+
+.div2 img{
+  height: 80%;
+  width: 100%;
+  border-radius: 8px;
+}
+.novost i{
+  font-size: 1.3rem;
+  color:gray;
+  margin-right: 0.5rem;
+}
+
+.imed{
+  padding: 7px 1rem;
+  color:grey;
+  display: flex;
+  align-items: center;
+}
+
+.uvod{
+  padding: 1rem;
+  color: rgb(96, 96, 96);
+}
+
+.ob{
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  padding:0 1rem;
+  display: flex;
+}
+
+.ob a{
+  color:#47c2e7;
+  cursor: pointer;
+}
+.ob a:hover{
+text-decoration: underline;
+}
+.span2{
+flex: 1;
+display: flex;
+justify-content: center;
+}
+.datumi{
+  flex: 1;
+}
+
+
+.btn11{
+  padding: 0.5rem 1rem;
+  background-color: #43b9dc;
+  border-radius: 7px;
+  
+  color:white;
+}
+.btn11:hover{
+ 
+  background-color: black;
+  transition: 0.3s linear;
+
+}
+
+.btn11 i{
+  margin-left: 0.5rem;
+}
+.btn12{
+  padding: 0.5rem 1rem;
+  background-color: #43b9dc;
+  border-radius: 7px;
+margin-bottom: 1rem!important;
+  color:white;
+}
+.btn12:hover{
+ 
+  background-color: black;
+  transition: 0.3s linear;
+
+}
+
+.btn12 i{
+  margin-left: 0.5rem;
+}
+
+.az {
+  font-size: 1.3rem!important;
+  background-color: black;
+  letter-spacing: 0.1rem;
+  padding: 0.6rem 1rem;
+  color:white;
+  border-radius: 8px;
+}
+
+
+.az i{
+  color:white;
+  margin-right:0.2rem !important;
+}
+
+
+.az:hover i{
+color:black;
+transition: 0.3s linear;
+
+}
+
+.az:hover{
+  background-color: white;
+  color: black!important;
+  transition: 0.3s linear;
+}
+
+
+
+.cent13{
+  display: flex;
+  width: 100%;
+  justify-content:center;
+}
+
+.ddn{
+  background-color: black;
+  color:white;
+  padding: 0.7rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  margin:1.5rem 0!important;
+
+}
+
+.right{
+  text-align: right;
+}
+.ddn i{
+  margin-right: 0.3rem;
+}
+.ddn:hover{
+  color:black;
+  background-color: white;
+  transition: 0.3s linear;
+}
+

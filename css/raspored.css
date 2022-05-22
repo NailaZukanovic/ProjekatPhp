@@ -1,0 +1,42 @@
+h5{
+    font-size: 1.5rem;
+    margin: 2rem;
+    
+}
+
+.raspored h3{
+    color: #43b9dc;
+    font-size: 2.4rem;
+}
+.raspored h5{
+    color: #43b9dc;
+    font-size: 1.7rem;
+    letter-spacing: 0.3px;
+}
+
+.raspored {
+  padding: 2rem;
+  margin-top: 7rem;
+  display: flex;
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+ 
+
+}
+
+.raspored1 {
+  flex: 1;
+}
+.raspored2 {
+  flex: 1;
+  padding: 1.5rem;
+
+
+
+
+  box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+  
+}
+
+.raspored2 label {
+  font-size:1.8rem;}
