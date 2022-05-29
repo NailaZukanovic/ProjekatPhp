@@ -16,29 +16,7 @@
             
         }
 
-        $sql="SELECT verified FROM user WHERE KorisnickoIme='$username' OR Email ='$username';";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-       
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-                $verifiedStatus=$row['verified'];
-            }
-     
-            
-        } else {
-           
-        }
-       
-  
-        if($verifiedStatus!=1)
-        {
-            header("location:../login.php?error=notverified");
-            exit();
-        }
-        
-        
+      
             loginUser($conn,$username,$pwd);
             $conn->close();
         

@@ -47,6 +47,10 @@ if (isset($_GET["error"])) {
     {
         echo"<div class='uspeh'>Uspesno ste verifikovali nalog.Ulogujte se za konacan pristup!</div>";
     }
+    else if($_GET["error"]=="notverified")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'>Vaš nalog nije verifikovan.Proverite vaš email!</div>";
+    }
   else if($_GET["error"]=="none")
   {
 

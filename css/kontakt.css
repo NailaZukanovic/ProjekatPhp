@@ -1,0 +1,176 @@
+.div{
+    display: flex;
+}
+
+.div1{
+    flex: 1;
+}
+.div2{
+
+    flex:1.3;
+}
+.kontakt{
+    width: 100%;
+    height: 500px;
+    border-bottom-right-radius: 20%;
+    background-image: url('images/work1.png');
+    background-size: cover;
+ 
+    
+  }
+.div1 h2{
+    text-align: center;
+    color: #43b9dc;
+    font-size: 3rem;
+
+padding-top: 8rem;
+ 
+    
+}
+.appoint
+{
+    padding: 1.5rem 2.6rem;
+    background: var(--backgroundcolor);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.appoint:hover{
+    color: var(--fontcolor) !important;
+    background-color: white !important;
+    transition: 0.5s all ease-in-out;
+}
+
+
+.informacije{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 450px;
+    padding: 3.4rem;
+    border-top-left-radius: 15%;
+    border-bottom-right-radius:15%;
+    margin-top: 20rem;
+    font-size: 1.3rem;
+
+    margin-bottom: 4rem;
+
+}
+
+.informacije h2{
+    letter-spacing: 0.1rem;
+    color:#006a8a;
+}
+
+.informacije i{
+    color:#006a8a;
+    margin-right: 1rem;
+}
+
+.informacije ul{
+    list-style-type: none;
+
+    padding: 2rem 2.5rem;
+}
+
+.informacije ul li{
+    padding: 1rem 0;
+    font-size: 1.6rem;
+}
+
+.informacije a:hover{
+    text-decoration: underline;
+}
+
+.vreme{
+    font-weight: 500;
+}
+.malo{
+    font-size: 1.5rem;
+}
+
+.text01{
+    padding: 2rem;
+    color: #43b9dc;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.pitanja{
+    padding:2rem 4rem;
+  
+}
+
+.pitanje{
+ background-color:#34d3b4;
+width: 80% ;
+ padding:1.8rem 3rem;
+ color:white;
+margin:1.5rem 0;
+ border-top-left-radius: 15%;
+ border-bottom-right-radius:15%;
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+font-size: 1.6rem;
+}
+
+.pitanje .teks{
+    padding:1rem;
+    line-height: 2.5rem;
+    display:none;
+  
+}
+
+.teks1{
+    padding:1rem;
+    line-height: 2.5rem;
+    display:none;
+
+}
+.teks2{
+    padding:1rem;
+    line-height: 2.5rem;
+    display:none;
+
+}
+.teks3{
+    padding:1rem;
+    line-height: 2.5rem;
+    display:none;
+
+}
+.teks4{
+    padding:1rem;
+    line-height: 2.5rem;
+    display:none;
+
+}
+.teks5{
+    padding:1rem;
+    line-height: 2.5rem;
+    display:none;
+
+}
+
+.cntr{
+    display: flex;
+    justify-content: center;
+}
+
+.btn11{
+    background-color: inherit;
+    padding: 1rem;
+    border: none;
+    font-size: 1.6rem;
+    color:white;
+cursor: pointer;
+
+}
+
+.btn11:focus {
+    
+    border: none;
+  
+
+
+}

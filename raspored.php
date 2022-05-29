@@ -152,7 +152,7 @@ if (isset($_GET["error"])) {
 
 </div>
 
-<div style="margin:3rem">
+<div style="margin:3rem 0">
 <?php
 $servername = "localhost";
         $username = "root";

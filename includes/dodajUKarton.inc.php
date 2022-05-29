@@ -4,6 +4,7 @@
 session_start();
 
 require_once "functions.inc.php";
+require_once "dbh.inc.php";
 $jmbg=$_SESSION["JmbgKor"];
  $jmbgDok=$_SESSION["jmbg"];
 $datump=$_SESSION["Datum_Pregleda"];
@@ -19,6 +20,13 @@ if (isEmptyKarton($anamneza,$dijagnoza,$lečenje)!==false) {
 }
 
 
+
+if(KartonProvera($conn,$vremep,$datump)===1)
+{
+    header("location:../KartonDodaj.php?state=alreadyExists&jmbgKorisnika=".$jmbg."&datum=".$datump."&vreme=".$vremep."");
+    exit();
+
+}
 $servername = "localhost";
 $username = "root";
 $password = "";

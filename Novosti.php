@@ -54,7 +54,7 @@ require_once "includes/dbh.inc.php";?>
                 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-                $sql = "SELECT id,JMBGkor,Naslov,uvod,glavni_deo,citat,slika,Datum FROM novosti  ORDER BY Datum DESC LIMIT 3;";
+                $sql = "SELECT id,JMBGkor,Naslov,uvod,glavni_deo,citat,slika,Datum FROM novosti  ORDER BY Datum DESC ";
                 $result = $conn->query($sql);
                 
                 if ($result->num_rows > 0) {
@@ -69,7 +69,7 @@ echo "<h2  class='novostId'>Novosti</h2>";
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                        
-                        echo "<div style='width:95%;border:1px dotted gray;' class='novost'><div class='div2'><img src='".$row["slika"]."' >
+                        echo "<div style='width:95%;border:1px dotted gray;' class='novost'><div class='div2'><img src='uploads/".$row["slika"]."' >
                         </div><div class='div8'>
                         
                         <div class='div80'><p style='font-size:1.7rem;' class='naslovN'>".$row["Naslov"]."</p><p class='imed'><i class='fas fa-user-alt'></i>Dr ".PronadjiDoktora($conn,$row["JMBGkor"])."</p>

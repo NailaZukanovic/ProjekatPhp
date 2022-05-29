@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-$jmbg=$_SESSION["jmbg"];
+
 
 
 
@@ -279,7 +279,7 @@ include_once './komponente/header.php';
        
             
             
-             echo "<div class='swiper-wrapper  product-container'>";
+             echo "<div style='margin-right:3px;' class='swiper-wrapper  product-container'>";
         
              // output data of each row
              while($row = $result->fetch_assoc()) {

@@ -40,9 +40,9 @@ include_once './komponente/header.php';
        <div class="main-text">
       <span class="text1"><h2>Dobrodošli na N <span style="color:black" >Clinic</span>
            </h2></span>     
-        <h4>Zakažite vaš termin kod nas!</h4>
+        <h4>Zakažite termin kod nas!</h4>
            
-           <button  onclick="location.href = 'Pregledi.php';" class="book">Zakaži</button>
+           <button  onclick="location.href = 'login.php';" class="book">Prijavi se</button>
        </div>
    </div>
 

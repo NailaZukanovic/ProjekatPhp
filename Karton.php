@@ -59,7 +59,17 @@ require_once "includes/dbh.inc.php";
 $slika=PronadjiSliku($conn,$_SESSION['jmbg']); ?>
 
     <div class="centriraj">
-    <img class="slika" src="uploads/<?php echo"".$slika ?>" alt="">
+    <img class="slika" src="uploads/<?php 
+    
+    if($slika==='')
+    {
+      echo"profil.webp";
+    }
+    else
+    {
+      echo"".$slika;
+    }
+    ?>" alt="">
     <h2 style='color:#43b9dc;font-size:2rem;margin:1rem;letter-spacing:0.07rem;'>Pacijent <?php echo"".$_SESSION['ime'] ?></h2>
              <div  class='inf' >
          <p><span class='id2'>JMBG</span> :<?php echo "".$_SESSION["jmbg"]?></p>

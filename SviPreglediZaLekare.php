@@ -52,23 +52,23 @@ $jmbg=$_SESSION['jmbg'];
 
 
 
-$sql = "SELECT JMBGkor,DatumPregleda,VremePregleda,JMBGdok,ImeKorisnika FROM pregledi WHERE JMBGdok=$jmbg";
+$sql = "SELECT idPregleda,JMBGkor,DatumPregleda,VremePregleda,JMBGdok,ImeKorisnika FROM pregledi WHERE JMBGdok=$jmbg";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<h2 style='text-align:center;color:black;font-size:3rem;color:#43b9dc;margin-top:5rem;'>Zakazani termini</h2>";
-    echo "<form   method='GET'><div style='font-size:1.9rem;' class='sred'><table id='customers'><tr><th>Pacijent</th><th>Datum Termina</th><th>Vreme Termina</th><th>Uredi Karton</th></tr>";
+    echo "<form   method='GET'><div style='font-size:1.9rem;' class='sred'><table id='customers'><tr><th>Pacijent</th><th>Datum Termina</th><th>Vreme Termina</th><th>Uredi Karton</th><th>Ukloni termin</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
         $slika=PronadjiSliku($conn,$row["JMBGkor"]);
         echo "<tr><td style='text-align:center;' ><img class='krug' width='200px' height='200px' src='uploads/".$slika."'><p>".$row["ImeKorisnika"]."</p>
-        </td><td style='text-align:center;'>".$row["DatumPregleda"]."</td><td style='text-align:center;'>".substr($row["VremePregleda"],0,5)."h</td><td ><div class='ikonica2'><a class='ik21' href='KartonDodaj.php?jmbgKorisnika=".$row['JMBGkor']."&datum=".$row["DatumPregleda"]."&vreme=".$row["VremePregleda"]."'><i  class='fas fa-edit'></i></a></div></td></tr>";
+        </td><td style='text-align:center;'>".$row["DatumPregleda"]."</td><td style='text-align:center;'>".substr($row["VremePregleda"],0,5)."h</td><td ><div class='ikonica2'><a  class='ik21' href='KartonDodaj.php?jmbgKorisnika=".$row['JMBGkor']."&datum=".$row["DatumPregleda"]."&vreme=".$row["VremePregleda"]."'><i  class='fas fa-edit'></i></a></div></td><td style='text-align:center;'><div style='background-color:inherit;' class='ikonica21'><a class='ik21' onclick='return checkDelete()'  style='display:flex;justify-content:center;align-items:center;' href='includes/ukloniPregled.php?idP=".$row["idPregleda"]."&datum=".$row["DatumPregleda"]."&vreme=".substr($row["VremePregleda"],0,5)."'><i style='color:red;font-size:3.4rem;' class='fas fa-times'></a></i></div></td></tr>";
     }
     echo "</table>";
     echo "</div>";
     
 } else {
-    echo "<div class='sredina'><h2>Trenutno nepostoji ni jedan zahtev!</h2></div>";
+    echo "<div style='margin-top:5rem;' class='sredina'><h2>Trenutno nepostoji ni jedan zahtev!</h2></div>";
 }
 
 $conn->close();
@@ -84,6 +84,13 @@ include_once './komponente/footer.php';
 
 
 
+<script>
+
+function checkDelete()
+{
+    return confirm('Da li ste sigurni da zelite da izbrišete ovaj termin sa liste vaših zakazanih termina?');
+}
+</script>
 </body>
 
 

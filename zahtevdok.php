@@ -1,11 +1,3 @@
-<?php
-session_start();
-if(!$_SESSION['useruid'])
-{
-  header("location:home.php");
-  exit();
-}
-?>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -31,13 +23,38 @@ if(!$_SESSION['useruid'])
 
 include_once './komponente/header.php';
 ?>
+<?php
+session_start();
 
-   <div style="padding:6rem;">
-       <h3>Zahtev za registraciju kao doktor je uspešno poslat!</h3>
-       <h5>Na vašem emailu će stići potvrda o prihvatanju zahteva,u roku od 24h od naše službe!</h5>
-   </div>
-<?php 
 ?>
+
+<div style="height:50rem;" class="login">
+<div class="login1">
+
+</div>
+<div style='flex:2;' class="login1">
+
+<h3 style="margin:2rem 0">Vaš zahtev za pristup sajtu je poslat!<i style="font-size:2.5rem;margin:0 1rem; color:red;" class="fas fa-share"></i><i style="font-size:3rem; color:red;" class="fas fa-envelope"></i></h3>  
+
+<h3 style="margin:2rem 0;font-size:1.9rem;">Naš administrator će vas obavestiti preko vašeg e-maila o prihvatanju ili odbijanju zahteva u najskorijem roku!</h3>  
+<h3 style="margin:2rem 0;text-align:center;">Vaš  N <span style="color:black" >Clinic</span>!</h3>  
+
+
+
+
+</div>
+<div class="login1">
+
+</div>
+
+
+
+
+
+
+</div>
+
+
 
 
 <?php

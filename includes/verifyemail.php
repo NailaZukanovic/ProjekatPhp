@@ -6,7 +6,7 @@ if(isset($_POST["submit"]))
 
    $unetiKod=$_POST["vkod"];
   
-
+$danasnji=date('Y-m-d');
   
    $jmbg=$_GET["jmbg"];
 
@@ -23,7 +23,7 @@ exit();
    {
 
           
-$sql="UPDATE user SET verified=1,verified_at=".date("Y-m-d")." WHERE JMBGkor=".$jmbg."";
+$sql="UPDATE user SET verified=1,verified_at='$danasnji' WHERE JMBGkor=".$jmbg."";
 
 
 

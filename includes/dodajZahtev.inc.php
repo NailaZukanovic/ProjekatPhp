@@ -12,9 +12,9 @@ $Ime=$_GET['ime'];
 $Datum=$_GET['datum'];
 $Mesto=$_GET['mesto'];
 $Pol=$_GET['pol'];
-
+$verifiedBegin=1;
 $vrsta='doktor';
-$slika='images/ourteam3.png';
+$slika=PronadjiSlikuZahtev($conn,$jmbg);
 
 $PWD=PronadjiPassword($conn,$jmbg);
 
@@ -28,7 +28,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO user (Ime,Email,KorisnickoIme,PWD,vrsta,JMBGKor,Mesto_Rodj,Datum_Rodj,Pol,slika) VALUES('$Ime','$Email','$KorisnickoIme','$PWD','$vrsta','$jmbg','$Mesto','$Datum','$Pol','$slika');";
+$sql = "INSERT INTO user (Ime,Email,KorisnickoIme,PWD,vrsta,JMBGKor,Mesto_Rodj,Datum_Rodj,Pol,slika,verified) VALUES('$Ime','$Email','$KorisnickoIme','$PWD','$vrsta','$jmbg','$Mesto','$Datum','$Pol','$slika','$verifiedBegin');";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
@@ -53,7 +53,7 @@ if ($conn->query($sql) === TRUE) {
 
 
 $conn->close();
-
+/*
 $to=$Email;
 
 $subject="Odobren vam je zahtev za doktora!";

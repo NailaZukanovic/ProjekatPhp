@@ -23,7 +23,7 @@ session_start();
     
 
   
-
+/*
 
 
 if(isEmptyDok($IdDoktor,$datum,$vreme)!==false)
@@ -31,12 +31,13 @@ if(isEmptyDok($IdDoktor,$datum,$vreme)!==false)
    header("location:../raspored.php?error=praznaPolja");
    exit();
 }
+
 if($today>$termin)
 {
     header("location:../raspored.php?error=invaliddate");
     
     
-}
+}*/
 
 
 $servername = "localhost";

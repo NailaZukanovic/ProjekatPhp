@@ -64,13 +64,35 @@ if (isset($_GET["error"])) {
     {
         echo"<div style='margin-left:0;padding:1rem;' class='sredina'>JMBG mora sadržati 13 cifara!</div>";
     }
+   else if($_GET["error"]=="invalidName")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'>Pogresan format imena!</div>";
+    }
+   else if($_GET["error"]=="invalidPlace")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'>Format mesta je grad(mesto),Drzava</div>";
+    }
+   else if($_GET["error"]=="invalidDate")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'>Imate neodgovarajuci broj godina!</div>";
+    }
+   else if($_GET["error"]=="invalidpasswordlength")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'>Password mora imati izmedju 6 i 30 karaktera!</div>";
+    }
+   else if($_GET["error"]=="alreadyExists")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'>Ovakav korisnik već postoji!</div>";
+    }
+
+    
   
  
 }
 ?>
 <form action="includes/signup.inc.php" method="post" enctype="multipart/form-data" >
-<label for="ime">Ime</label><br>
-<input type="text" name="ime" placeholder="ime..." ><br>
+<label for="ime">Ime i Prezime</label><br>
+<input type="text" name="ime" placeholder="ime i prezime..." ><br>
 <label for="email">Email</label><br>
 <input type="text" name="email" placeholder="Email..." ><br>
 <label for="jmbg">Jmbg</label><br>
@@ -91,8 +113,6 @@ if (isset($_GET["error"])) {
 <option value="Ž">Ženski</option>
 </select>
 
-<label for="ime">Korisničko ime</label><br>
-<input type="text" name="uid" placeholder="Username..." ><br>
 <label for="ime">Password</label><br>
 <input type="password" name="pwd" placeholder="Vaš password..." ><br>
 <label for="ime">Potvrdi Password</label><br>

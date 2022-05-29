@@ -59,7 +59,7 @@ if ($result->num_rows > 0) {
     echo "</div>";
     
 } else {
-    echo "<div class='sredina'><h2>Trenutno nemate ni jednog pacijenta!</h2></div>";
+    echo "<div style='margin-top:7rem;margin-right:2rem;' class='sredina'><h2>Trenutno nemate ni jednog pacijenta!</h2></div>";
 }
 
  ?>

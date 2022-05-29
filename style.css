@@ -12,6 +12,11 @@
 
   text-decoration: none;
 }
+
+a:focus{
+  outline: none;
+  border: none;
+}
 html {
   font-size: 63.5%;
   overflow-x: hidden;
@@ -444,6 +449,22 @@ h1 {
   font-size: 1.4rem;
 }
 
+.ikonica21 {
+  text-align: center;
+  padding: 0.4rem;
+  width: auto;
+  font-size: 00.2rem;
+}
+
+.ikonica21 i{
+  padding: 0.8rem;
+  background-color:inherit;
+  border-radius: 7px;
+  
+  text-align: center;
+  
+}
+
 .about-icon i {
   font-size: 3.2rem;
   margin: 1rem 0rem;
@@ -465,8 +486,20 @@ h1 {
   
   
 }
+.ikonica21 a i:hover {
+  background-color:#ffffff!important;
+  color:#070707;
+ 
+  transition: 0.3s linear;
+
+  
+  
+}
 
 #customers td .ikonica2 a:hover{
+  background-color: inherit!important;
+}
+#customers td .ikonica21 a:hover{
   background-color: inherit!important;
 }
 
@@ -914,7 +947,20 @@ input#file-input + label i {
 .citat{
   padding: 1.4rem;
   width: 100%;
+  font-weight: 500;
   background-color: rgb(201, 201, 201);
   border-left:4px solid rgb(172, 170, 170);
   margin:1rem 0;
+}
+
+
+.x:hover{
+  background-color: inherit!important;
+}
+
+
+.novostId{
+
+  color: #43b9dc;
+  font-size: 3rem;
 }

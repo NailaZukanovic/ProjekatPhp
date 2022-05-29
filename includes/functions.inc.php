@@ -41,7 +41,7 @@
  {
 
     $result;
-    if(!filter_var($email,FILTER_VALIDATE_EMAIL))
+    if(!preg_match('/^([A-Z])?([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/',$email))
     {
         $result=true;
     }
@@ -117,6 +117,123 @@
     }
 
     mysqli_stmt_close($stmt);
+ 
+
+}
+
+ function jmbgExists($conn,$jmbg)
+ {
+
+    $sql="SELECT * FROM user WHERE JMBGkor= ?;";
+
+    $stmt=mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt,$sql)) {
+        header("location: ../register.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt,"s",$jmbg);
+
+    mysqli_stmt_execute($stmt);
+
+
+    $resultData=mysqli_stmt_get_result($stmt);
+
+    if($row=mysqli_fetch_assoc($resultData))
+    {
+              return true;
+    }
+    else
+    {
+        $result=false;
+        
+         return $result;
+    }
+
+    mysqli_stmt_close($stmt);
+ 
+
+}
+
+
+
+
+function proveriDaliPostoji($user)
+{
+
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "PhpProjekat";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * FROM user where KorisnickoIme='$user';";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+
+ $istina='1';
+ return $istina;
+} 
+
+else {
+   $istina='0';
+  return $istina;
+
+   
+   
+
+   
+}
+
+
+
+}
+function kreirajKorisnicko($conn,$name)
+{
+    $rec=explode(' ',$name);
+    
+ 
+      $prezime=strtolower($rec[1]);
+      $duzina=strlen($rec[0]);
+    $duzinaP=rand(0,100);
+ 
+    $prvoSlovo=$rec[0][0];
+    $username=$prvoSlovo.$prezime.$duzina;
+$a=1;
+
+  if(proveriDaliPostoji($username)==='1')
+  {
+
+ while(proveriDaliPostoji($username)==='1')
+ {
+       $a=strval($a);
+       $username.=$a;
+       $a++;
+ }
+
+
+
+
+    return $username;
+  }
+  else{
+    return $username;
+  }
+       
+    
+
+
+
+  
  
 
 }
@@ -205,9 +322,13 @@ $vkey=substr(md5(time().$username),0,10);
     <body>
     <div>
     <div style='max-width:620px;margin:0 auto;font-family:sans-serif;color:#272727'> 
+    <h1 style='background:#f6f6f6;font-weight:600;font-size:1rem;padding:10px;text-align:center;color:#272727;'>
+    DOBRODOŠLI NA N CLINIC
+    </h1>
      <h1 style='background:#f6f6f6;font-weight:600;font-size:1rem;padding:10px;text-align:center;color:#272727;'>
-     Vaš verifikacioni kod je ".$vkey."
+     Vaš verifikacioni kod je ".$vkey." i  vaše korisničko ime je ".$username."
      </h1>
+  
      <p style='color:#272727;'>Link ispod vas vodi do forme za verifikaciju:</p>
      <div style='width:100%;text-align:center;'><a href='http://localhost/ProjekatPhp/VerificationScreen.php?jmbg=$jmbg' style='font-family:sans-serif;margin:0 auto;text-align:center;padding:10px;background:#34d3b4;border-radius:4px;font-size:20px 10px;color:#fff;cursor:pointer;text-decoration:none;display:inline-block;'>
      Unesi!
@@ -304,7 +425,24 @@ function loginUser($conn,$username,$pwd)
         header("location:../login.php?error=wronglogin");
         exit();
      }
+     $sql="SELECT verified FROM user WHERE KorisnickoIme='$username' OR Email ='$username';";
+     $result = $conn->query($sql);
 
+     if ($result->num_rows > 0) {
+    
+         // output data of each row
+         while($row = $result->fetch_assoc()) {
+             $verifiedStatus=$row['verified'];
+         }
+  
+         
+     }
+
+     if($verifiedStatus!=1)
+     {
+         header("location:../login.php?error=notverified");
+         exit();
+     }
      else if($checkPwd===true)
      {
 
@@ -437,6 +575,26 @@ function PronadjiSliku($conn,$jmbgzasliku)
 
 
 }
+function PronadjiSlikuZahtev($conn,$jmbgzasliku)
+{
+
+    $sql="SELECT slika FROM zahtev WhERE JMBG=?;";
+
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("s", $jmbgzasliku);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+         $pdoktor=$row['slika'];
+         return $pdoktor;
+    }
+   
+
+
+
+
+}
+
 
 function PronadjiEmail($conn,$jmbge)
 {
@@ -747,4 +905,184 @@ function proveriDuzinuSifre($pwd)
    }
 
    return $result;
+}
+function proveriNaslov($pwd)
+{
+
+   $result;
+
+   if(strlen($pwd)>15 && strlen($pwd)<140) 
+   {
+       $result=true;
+   }
+
+   else{
+       $result=false;
+   }
+
+   return $result;
+}
+function proveriUvod($pwd)
+{
+
+   $result;
+
+   if(strlen($pwd)>200 && strlen($pwd)<550) 
+   {
+       $result=true;
+   }
+
+   else{
+       $result=false;
+   }
+
+   return $result;
+}
+function proveriGlavni($pwd)
+{
+
+   $result;
+
+   if(strlen($pwd)>300 && strlen($pwd)<1500) 
+   {
+       $result=true;
+   }
+
+   else{
+       $result=false;
+   }
+
+   return $result;
+}
+function proveriCitat($pwd)
+{
+
+   $result;
+
+   if(strlen($pwd)>0 && strlen($pwd)<300) 
+   {
+       $result=true;
+   }
+
+   else{
+       $result=false;
+   }
+
+   return $result;
+}
+
+function insertNovost($conn,$jmbgKor,$naslov,$uvod,$glavniD,$citat,$slika,$date)
+{
+
+
+    $sql="INSERT INTO novosti (JMBGkor,Naslov,uvod,glavni_deo,citat,slika,Datum) VALUES(?,?,?,?,?,?,?);";
+
+    $stmt=mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt,$sql)) {
+        header("location:../DodajNovost.php?error=stmtfailed");
+        exit();
+    }
+ 
+
+    mysqli_stmt_bind_param($stmt,"sssssss",$jmbgKor,$naslov,$uvod,$glavniD,$citat,$slika,$date);
+
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+   
+   
+    header("location:../DodajNovost.php?state=success");
+    exit();
+
+}
+function KartonProvera($conn,$vreme,$date)
+{
+
+
+    $sql="SELECT COUNT(*) AS broj FROM karton WHERE Vreme_Pregleda=? AND Datum_Pregleda=?;";
+
+    $stmt=mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt,$sql)) {
+        header("location:../DodajNovost.php?error=stmtfailed");
+        exit();
+    }
+ 
+
+    mysqli_stmt_bind_param($stmt,"ss",$vreme,$date);
+
+    mysqli_stmt_execute($stmt);
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+         return $row["broj"];
+    }
+
+
+$conn->close();
+   
+
+   
+   
+
+}
+
+
+function izbrisiDatume($conn,$date){
+
+    
+    $sql = $conn->prepare("DELETE  FROM raspored WHERE Datum <?");  
+	$sql->bind_param("s", $date); 
+	$sql->execute();
+	$sql->close(); 
+	
+
+
+
+}
+
+
+function CheckName($ime)
+{
+
+    if(preg_match('/^([A-Z])([a-z]){2,15}\s([A-Z])([a-z]){2,30}((\-[A-Z])([a-z]){2,30})?$/',$ime))
+    {
+        return true;
+
+    }
+    else
+    {
+return false;
+    }
+}
+function CheckMesto($mesto)
+{
+
+    if(preg_match('/^([A-Z])([a-z]){2,25}(\s([A-Z])([a-z]){2,25})?\,([A-Z])([a-z]){2,30}(\s([A-Z])([a-z]){2,25})?(\s([A-Z])([a-z]){2,25})?$/',$mesto))
+    {
+        return true;
+
+    }
+    else
+    {
+return false;
+    }
+}
+
+
+
+function ProveriDatume($date)
+{
+
+    $gornja='2018-05-29';
+    $donja='1902-05-29';
+    if($gornja>$date  &&  $donja<$date)
+    {
+        return true;
+
+    }
+    else
+    {
+return false;
+    }
 }

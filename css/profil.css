@@ -456,7 +456,10 @@ border-radius: 8px;
   font-weight: 600;
   color:black;
   font-size:1.4rem;
- 
+  display: flex;
+  align-items: center;
+ width: 100%;
+
   padding: 7px 1rem;
 
 }
@@ -621,7 +624,25 @@ transition: 0.3s linear;
 }
 .ddn:hover{
   color:black;
-  background-color: white;
+  background-color: #43b9dc;
   transition: 0.3s linear;
 }
 
+.detalji:focus{
+outline:none!important;
+border:none;
+  
+}
+
+
+.wd1{
+  flex: 25;
+  
+}
+.wd2{
+  flex:1;
+
+  justify-content: right;
+  align-items: right;
+  text-align: right;
+}

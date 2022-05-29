@@ -49,9 +49,29 @@ include_once './komponente/header.php';
 
 <div class="conn">
 
-<div class="conn1">
+<div  style='text-align:center;' class="conn1">
 
+<?php
+if (isset($_GET["state"])) {
+    
+    if($_GET["state"]=="emptyinput")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'><p>Popunite sva polja!</p></div>";
+    }
+    if($_GET["state"]=="alreadyExists")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'><p>Već ste uneli podatke za ovaj termin!</p></div>";
+    }
+    if($_GET["state"]=="success")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='uspeh'><p>Uspešno ste uneli podatke u karton!</p></div>";
+    }
+   
+ 
 
+ 
+}
+?>
 <form action="./includes/dodajUKarton.inc.php" method="post" class='forma'>
    
  <label for="anamneza">Anamneza Pacijenta</label><br>
@@ -66,23 +86,7 @@ include_once './komponente/header.php';
  </textarea>
  <br>
  <input style='width:20%;' type="submit" id="submit" name="submit" value="Unesi" placeholder="Vaš password..." ><br>
- <?php
-if (isset($_GET["state"])) {
-    
-    if($_GET["state"]=="emptyinput")
-    {
-        echo"<div style='width:15rem; text-align:center;' class='danger'><p>Popunite sva polja!</p></div>";
-    }
-    if($_GET["state"]=="success")
-    {
-        echo"<div class='danger'><p>Uspešno ste uneli podatke u karton!</p></div>";
-    }
-   
- 
 
- 
-}
-?>
 </form>
 
 
@@ -104,7 +108,7 @@ $_SESSION["Datum_Pregleda"]=$datum;
 ?> 
 
 <div class="podaci">
-    <img class="slika" src="uploads/<?php echo"".$slika ?>" alt="">
+<div class="wd1"> <div class="sd1"><img class="slika" src="uploads/<?php echo"".$slika ?>" alt=""></div><div class="sd2"><a onclick='return checkDelete()'  href='<?php echo "includes/ukloniPregled2.php?jmbgKorisnika=".$jmbg."&datum=".$datum."&vreme=".substr($vreme,0,5)."" ?>'><i style='color:red;' class='fas fa-times'></i></a></div></div>   
     <h2>Pacijent <?php echo"".$ime ?></h2>
     <?php
    echo" <a class='btn1'  href='KartonD.php?jmbg=".$jmbg."'>Karton <i class='fas fa-clipboard-list'></i></a>";
@@ -137,7 +141,7 @@ if ($result->num_rows > 0) {
     echo "<form method='GET'><div class='sred'><table id='customers'><tr><th>JMBG</th><th>Ime Doktora</th><th>Datum Termina</th><th>Vreme Termina</th><th>Zakaži</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["JMBGdoktora"]."</td><td>".$row["ImeDoktora"]."</td><td>".$row["Datum"]."</td><td>".substr($row["Vreme"],0,5)."h</td><td style='text-align:center;'><a href='./includes/dodajPregledDoktor.inc.php?jmbg=".$jmbg."&datum=".$row['Datum']."&vreme=".$row['Vreme']."&idr=".$row['id']."' onclick='return checkDelete()'><i style='color:green;' class='fas fa-check-circle'></i></a></td></tr>";
+        echo "<tr><td>".$row["JMBGdoktora"]."</td><td>".$row["ImeDoktora"]."</td><td>".$row["Datum"]."</td><td>".substr($row["Vreme"],0,5)."h</td><td style='text-align:center;'><a href='./includes/dodajPregledDoktor.inc.php?jmbg=".$jmbg."&datum=".$row['Datum']."&vreme=".substr($row['Vreme'],0,5)."&idr=".$row['id']."' onclick='return checkDelete()'><i style='color:green;' class='fas fa-check-circle'></i></a></td></tr>";
     }
     echo "</table>";
     echo "</div>";
@@ -188,7 +192,7 @@ include_once './komponente/footer.php'
 
         function checkDelete()
         {
-            return confirm('Da li ste sigurni da zelite da izaberete ovaj termin?');
+            return confirm('Da li ste sigurni da zelite da izbrišete ovaj termin sa liste vaših zakazanih termina?');
         }
     </script>
  
