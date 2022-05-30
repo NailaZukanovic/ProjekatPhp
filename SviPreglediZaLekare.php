@@ -3,7 +3,7 @@
 session_start();
 if(!$_SESSION['useruid'])
 {
-  header("location:home.php");
+  header("location:index.php");
   exit();
 }
 ?>
@@ -52,11 +52,25 @@ $jmbg=$_SESSION['jmbg'];
 
 
 
+
 $sql = "SELECT idPregleda,JMBGkor,DatumPregleda,VremePregleda,JMBGdok,ImeKorisnika FROM pregledi WHERE JMBGdok=$jmbg";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<h2 style='text-align:center;color:black;font-size:3rem;color:#43b9dc;margin-top:5rem;'>Zakazani termini</h2>";
+    
+if (isset($_GET["error"])) {
+    
+
+    if($_GET["error"]=="invaliddate")
+    {
+        echo"<div style='display:flex;justify-content:center;'><div style='margin-left:0;padding:1rem;width:80%;' class='sredina'><p>Ne možete ukloniti pregled koji nije obavljen!</p></div></div>";
+    }
+  
+ 
+
+ 
+}
     echo "<form   method='GET'><div style='font-size:1.9rem;' class='sred'><table id='customers'><tr><th>Pacijent</th><th>Datum Termina</th><th>Vreme Termina</th><th>Uredi Karton</th><th>Ukloni termin</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {

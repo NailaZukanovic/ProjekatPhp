@@ -23,8 +23,7 @@ $today=strtotime($danasnji);
 $termin=strtotime($datum);
 
 
-echo " ".$today;
-echo" ".$termin;
+
 if($today<$termin)
 {
    

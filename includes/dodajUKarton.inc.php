@@ -27,6 +27,15 @@ if(KartonProvera($conn,$vremep,$datump)===1)
     exit();
 
 }
+
+
+
+if(ProveriDodavanjeKartona($vremep,$datump)!==true)
+{
+    header("location:../KartonDodaj.php?state=invaliddate&jmbgKorisnika=".$jmbg."&datum=".$datump."&vreme=".$vremep."");
+    exit();
+}
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -45,4 +54,5 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+$conn->close();
 

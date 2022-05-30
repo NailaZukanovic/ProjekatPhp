@@ -4,7 +4,7 @@ $jmbg=$_SESSION["jmbg"];
 
 if(!$_SESSION['useruid'])
 {
-  header("location:home.php");
+  header("location:index.php");
   exit();
 }
 

@@ -1,7 +1,7 @@
 <?php
 
 $id=$_GET["id"];
-echo "".$id;
+
 
 
 $servername = "localhost";

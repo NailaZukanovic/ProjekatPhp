@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(!$_SESSION['useruid'])
+{
+  header("location:index.php");
+  exit();
+}
 ?>
 <html>
 <head>

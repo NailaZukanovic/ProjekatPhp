@@ -2,7 +2,7 @@
 session_start();
 if(!$_SESSION['useruid'])
 {
-  header("location:home.php");
+  header("location:index.php");
   exit();
 }
 $jmbg=$_GET["jmbgKorisnika"];
@@ -61,6 +61,10 @@ if (isset($_GET["state"])) {
     if($_GET["state"]=="alreadyExists")
     {
         echo"<div style='margin-left:0;padding:1rem;' class='sredina'><p>Već ste uneli podatke za ovaj termin!</p></div>";
+    }
+    if($_GET["state"]=="invaliddate")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'><p>Da bi ste uneli podatke morate prvo da obavite pregled!</p></div>";
     }
     if($_GET["state"]=="success")
     {

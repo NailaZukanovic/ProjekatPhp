@@ -1086,3 +1086,78 @@ function ProveriDatume($date)
 return false;
     }
 }
+
+function ProveriDodavanjeKartona($vreme,$datum)
+{
+
+
+    $ex=explode(':',$vreme);
+  
+    
+    $sati=$ex[0];
+    $minuti=$ex[1];
+    
+    $danasnjiSat=date('H');
+    $danasnjimin=date('i');
+    $danasnji=date('Y/m/d');
+    $today=strtotime($danasnji);
+    $termin=strtotime($datum);
+
+$result;
+
+    if($today<$termin)
+    {
+       
+    
+        
+             
+        $result=false;
+        return $result;   
+            
+          
+    
+    
+    }
+    
+    else if($today===$termin)
+    {
+    
+        
+        if($sati>$danasnjiSat)
+        {
+            
+            $result=false;
+            return $result;   
+        } 
+        else if($sati=$danasnjiSat)
+        {
+            if($minuti>$danasnjimin)
+            {
+                   
+                $result=false;
+                return $result;   
+            }
+            else{
+  
+                $result=true;
+                return $result;      
+            }
+        }
+        else
+        {
+                  
+            $result=true;
+            return $result;
+        
+        }
+    
+    }
+    
+    
+    else {
+    
+        $result=true;
+        return $result;
+    }
+
+}

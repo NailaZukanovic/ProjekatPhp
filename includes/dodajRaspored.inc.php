@@ -14,11 +14,9 @@ session_start();
     $danasnji=date('Y/m/d');
     $today=strtotime($danasnji);
     $termin=strtotime($datum);
-    echo" ".$IdDoktor;
-   
-    echo" ".$vreme;
-    echo" ".$imeDoktora;
-    echo " ".$datum;
+  
+
+
 
     
 
@@ -74,7 +72,7 @@ header("location: ../raspored.php?error=zauzetTermin");
 
 
 
-/*dodajRaspored($conn,$IdDoktor,$imeDoktora,$datum,$vreme);*/
+
 $servername = "localhost";
 $username = "root";
 $password = "";

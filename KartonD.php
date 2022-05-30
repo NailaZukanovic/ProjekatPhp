@@ -3,7 +3,7 @@
 session_start();
 if(!$_SESSION['useruid'])
 {
-  header("location:home.php");
+  header("location:index.php");
   exit();
 }
 ?>
