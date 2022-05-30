@@ -21,7 +21,7 @@ if(!$_SESSION['useruid'])
 
     <style>
    <?php
-   include "style.css"
+   include "css/style.css"
         ?>
             <?php
 

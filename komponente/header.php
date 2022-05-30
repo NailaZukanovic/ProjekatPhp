@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 
 <html>
 <head>
@@ -15,7 +13,7 @@ session_start();
     <style>
 
         <?php
-   include "style.css"
+   include "css/style.css"
         ?>
     </style>
 
@@ -24,12 +22,12 @@ session_start();
 <body>
 
 <header class="header">
-        <a href="#" id="logo"><span>N</span> Clinic</a>
+        <a href="index.php" id="logo"><span>N</span> Clinic</a>
 
 
     <div class="icons">
     <nav class="navbar">
-        <a href="home.php">O nama</a>
+        <a href="index.php">O nama</a>
         <a href="Pregledi.php">Pregledi</a>
         <a href="Novosti.php">Novosti</a>
         <a href="Kontakt.php">Kontakt</a>

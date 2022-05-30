@@ -22,7 +22,7 @@ if(!$_SESSION['useruid'])
     <style>
 
         <?php
-   include "style.css"
+   include "css/style.css"
         ?>
     </style>
 
@@ -70,6 +70,10 @@ if (isset($_GET["error"])) {
    else if($_GET["error"]=="usernameTaken")
     {
         echo"<div style='margin-left:0;padding:1rem;' class='sredina'>Korisničko ime je zauzeto!</div>";
+    }
+   else if($_GET["error"]=="invalidpasswordlength")
+    {
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'>Password mora biti od 7 do 25 karaktera!</div>";
     }
    else if($_GET["error"]=="invalidJmbg")
     {

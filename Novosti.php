@@ -1,6 +1,6 @@
 <?php
 session_start();
-$jmbg=$_SESSION["jmbg"];
+
 
 
 ?>
@@ -17,7 +17,7 @@ $jmbg=$_SESSION["jmbg"];
     <style>
 
         <?php
-   include "style.css"
+   include "css/style.css"
         ?>
         <?php
    include "css/profil.css"
@@ -40,7 +40,7 @@ require_once "includes/dbh.inc.php";?>
 
 
 
-<div style='margin:5rem;' >
+<div style='margin-top:8rem;margin-left:5rem;margin-right:5rem;' >
 <?php
                 $servername = "localhost";
                 $username = "root";

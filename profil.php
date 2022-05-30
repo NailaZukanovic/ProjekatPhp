@@ -33,7 +33,7 @@ izbrisiDatume($conn,$datum);
     <style>
 
         <?php
-   include "style.css"
+   include "css/style.css"
         ?>
             <?php
    include "./css/profil.css";
@@ -129,7 +129,7 @@ $conn->close();
                 }
                 else{
 
-                    echo "<img src='uploads/profil.webp' >";
+                    echo "<img src='images/profil.webp' >";
                 }
            
             ?>
@@ -400,7 +400,7 @@ if($_SESSION["userVrsta"]==='pacijent')
                  echo"<div class='overlay'>";
                   if(isset($_SESSION["useruid"]))
                   {
-                    echo"<a href='./includes/izaberiLekara.php?jmbg=".$row['JMBGKor']."&Ime=".$row['Ime']."' class='buy-btn'>Izaberi</a>";
+                    echo"<a  onclick='return izaberiDoktora()' href='./includes/izaberiLekara.php?jmbg=".$row['JMBGKor']."&Ime=".$row['Ime']."' class='buy-btn'>Izaberi</a>";
                   }
                   else{
                     echo"<a href='login.php' class='buy-btn'>Uloguj se!</a>";
@@ -508,10 +508,10 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<h2 style='text-align:center;color:black;font-size:3rem;color:#43b9dc;'>Slobodni termini izabranog lekara</h2>";
-    echo "<form method='GET'><div class='sred'><table id='customers'><tr><th>Ime Doktora</th><th>Datum Termina</th><th>Vreme Termina</th><th>Zakaži</th></tr>";
+    echo "<form method='GET'><div class='sred'><table id='customers'><tr><th>Datum Termina</th><th>Vreme Termina</th><th>Zakaži</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["ImeDoktora"]."</td><td>".$row["Datum"]."</td><td>".substr($row["Vreme"],0,5)."h</td><td style='text-align:center;'><a href='./includes/dodajPregled.inc.php?jmbg=".$p."&datum=".$row['Datum']."&vreme=".$row['Vreme']."&idr=".$row['id']."' onclick='return checkDelete()'><i style='color:green;' class='fas fa-check-circle'></i></a></td></tr>";
+        echo "<tr><td style='text-align:center;'>".$row["Datum"]."</td><td style='text-align:center;'>".substr($row["Vreme"],0,5)."h</td><td style='text-align:center;'><a href='./includes/dodajPregled.inc.php?jmbg=".$p."&datum=".$row['Datum']."&vreme=".$row['Vreme']."&idr=".$row['id']."' onclick='return checkDelete()'><i style='color:green;' class='fas fa-check-circle'></i></a></td></tr>";
     }
     echo "</table>";
     echo "</div>";
@@ -872,6 +872,10 @@ $(this).addClass("active").siblings().removeClass("active");
         function checkDelete2()
         {
             return confirm('Da li ste sigurni da zelite da izbrišete ovu novost?');
+        }
+        function izaberiDoktora()
+        {
+            return confirm('Da li ste sigurni da zelite da izaberete ovog doktora!');
         }
     </script>
 

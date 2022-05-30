@@ -11,7 +11,7 @@
     <style>
 
         <?php
-   include "style.css";
+   include "css/style.css";
    include './css/kontakt.css';
         ?>
     </style>
@@ -194,7 +194,7 @@ include_once './komponente/header.php';
 
 
 
-<script type='text/javascript' src='script.js' >
+<script type='text/javascript' src='js/script.js' >
 
 </script>
 <?php

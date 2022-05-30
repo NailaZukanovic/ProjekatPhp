@@ -68,11 +68,11 @@ $sql = "SELECT ImeDoktora,Datum,Vreme,JMBGdoktora FROM raspored WHERE JMBGdoktor
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<h2 style='text-align:center;color:black;font-size:3rem;color:#43b9dc;'>Raspored izabranog doktora</h2>";
-    echo "<form method='GET'><div class='sred'><table id='customers'><tr><th>ID</th><th>Ime Doktora</th><th>Datum Termina</th><th>Vreme Termina</th></tr>";
+    echo "<h2 style='text-align:center;color:black;font-size:3rem;color:#43b9dc;'>Slobodni termini</h2>";
+    echo "<form method='GET'><div class='sred'><table id='customers'><tr><th>Datum Termina</th><th>Vreme Termina</th></tr>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["JMBGdoktora"]."</td><td>".$row["ImeDoktora"]."</td><td>".$row["Datum"]."</td><td>".$row["Vreme"]."h</td></tr>";
+        echo "<tr><td style='text-align:center;'>".$row["Datum"]."</td><td style='text-align:center;'>".substr($row["Vreme"],0,5)."h</td></tr>";
     }
     echo "</table>";
     echo "</div>";

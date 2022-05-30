@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 
@@ -14,7 +16,7 @@
     <style>
 
         <?php
-include 'style.css';
+include 'css/style.css';
         ?>
 td{
     padding-left:2rem;

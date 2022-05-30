@@ -1,5 +1,4 @@
 
-
 <?php
 session_start();
 ?>
@@ -20,7 +19,7 @@ session_start();
     <style>
 
         <?php
-   include "style.css";
+   include "css/style.css";
    
    include './css/pregledi.css';
            
@@ -88,28 +87,38 @@ include_once './komponente/header.php';
 
 <div class="work-section">
     <div class="inner-work-section">
-        <h2>Kako mi radimo?</h2>
-        <p class="text-work">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
-            doloremque laudantium.Sed ut <br>perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        <h2>Kratko o nama </h2>
+        <div style='font-size:1.3rem;' >
+        <p  class="text-work">N Clinic je oftamološka klinika koja je počela sa radom 2000 god.N Clinic čini tim stručnjaka sa dugogodišnjim iskustvom u oblasti oftalmologije.Naš rad zasnovan je na najvišim profesionalnim i etičkim standardima. Rukovodimo se savremenim saznanjima u oftalmologiji, a naši lekari se kontinuirano stručno usavršavaju. U sastavu ordinacije nalazi se i optika sa velikim izborom dioptrijskih ramova za naočare.
+         <br>Naša MISIJA je da kvalitetnu oftalmološku dijagnostiku i terapiju učinimo dostupnom širokom krugu pacijenata.Svoju misiju ispunjavamo jer:
+
+imamo odgovoran odnos prema našim pacijentima i kolegama i
+stvaramo održive vrednosti i time ulivamo sigurnost i poverenje.</p>
             <div class="myimages">
                 <div class="inner-images">
                     <img src="images/dijete.jpeg" alt="">
-                    <p> ut perspiciatis unde omnis iste natus error si</p>
+                    <p> Pregledi naših mališana</p>
                 </div>
                 <div class="inner-images">
                     <img src="uploads/oko1.jpg" alt="">
-                    <p> ut perspiciatis unde omnis iste natus error si</p>
+                    <p> Detaljni pregledi oka</p>
                 </div>
             </div>
         </div>
+        </div>
+       
     <div class="inner-work-section scnclass">
         <h2>Upoznajte se sa našim radom</h2>
-        <p class="creative-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-        <a href="#" class="btn"><i class="fas fa-play-circle"></i> <span> Heart treatment</span></a>
-        <p class="creative-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-        <a href="#" class="btn"><i class="fas fa-play-circle"></i> <span> Heart treatment</span></a>
-        <a href="#" class="btn"><i class="fas fa-play-circle"></i> <span> Heart treatment</span></a>
-        <a href="#" class="btn"><i class="fas fa-play-circle"></i> <span> Heart treatment</span></a>
+        <div style='font-size:1.3rem;' >
+        <p class="creative-text">Neke od naših usluga su i oftamološki pregledi, dijagnostika, praćenje i lečenje pacijenata.Svi ozbiljniji zahtevi su praćeni pod budnim okom našeg lekarskog tima!  Pogledajte sve naše usluge.</p>
+        <a href="Pregledi.php" class="btn"><i class="fas fa-search"></i> <span>Pogledaj</span></a>
+        <p  class="creative-text">Ukoliko želite da zakažete termin a nemate nalog registrujte se <a class='lin1' href="register.php">ovde.</a></p>
+        <p  class="creative-text">Ukoliko želite da zakažete termin a imate nalog prijavite se <a class='lin1' href="login.php">ovde.</a></p>
+        <p  class="creative-text">Pri prijavljivanju na profil ukoliko nemate izabranog lekara izaberite jednog od dostupnih,da bi dalje pristupili zakazivanju termina.Svaki lekar ima svoj raspored termina koji počinje najranije od 08:15h do najkasnije 17:00h.</p>
+        <p  class="creative-text">Cene svih dostupnih usluga možete videti ovde:</p>
+        <a href="Cenovnik.php" class="btn"><i class="fas fa-wallet"></i><span> Cenovnik</span></a>
+      
+        </div>
     </div>
 </div>
 

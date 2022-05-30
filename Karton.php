@@ -21,7 +21,7 @@ if(!$_SESSION['useruid'])
 
     <style>
    <?php
-   include "style.css"
+   include "css/style.css"
         ?>
             <?php
 
@@ -59,7 +59,7 @@ require_once "includes/dbh.inc.php";
 $slika=PronadjiSliku($conn,$_SESSION['jmbg']); ?>
 
     <div class="centriraj">
-    <img class="slika" src="uploads/<?php 
+    <img class="slika" src="images/<?php 
     
     if($slika==='')
     {

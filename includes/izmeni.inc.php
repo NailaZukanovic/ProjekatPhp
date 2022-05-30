@@ -15,7 +15,7 @@ if(isset($_POST["submit"]) )
    $pwd=$_POST["pwd"];
    $pwdRepeat=$_POST["pwdrepeat"];
 
-   echo "".$pwd;
+   
    require_once "dbh.inc.php";
    require_once 'functions.inc.php';
 
@@ -40,6 +40,7 @@ if (uidExists($conn,$username,$email)!==false) {
  exit();
  
 }
+
 
   $img_name=$_FILES['image']['name'];
   $img_size=$_FILES['image']['size'];
@@ -144,6 +145,18 @@ if (uidExists($conn,$username,$email)!==false) {
         header("Location:../IzmeniPodatke.php?error=emptyinput");   
         exit();
     } 
+
+   
+else if (strlen($pwd)<7 || strlen($pwd)>30) {
+    header("location:../IzmeniPodatke.php?error=invalidpasswordlength");
+    exit();
+    
+   }
+ else  if(invalidEmail($email)!==false)
+{
+    header("location:../IzmeniPodatke.php?error=invaildEmail");
+    exit();
+}
     else{
         $servername = "localhost";
         $username = "root";

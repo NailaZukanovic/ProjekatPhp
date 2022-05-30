@@ -1,6 +1,6 @@
 <?php
 session_start();
-$jmbg=$_SESSION["jmbg"];
+
 
 
 
@@ -18,7 +18,7 @@ $jmbg=$_SESSION["jmbg"];
     <style>
 
         <?php
-   include "style.css"
+   include "css/style.css"
         ?>
         <?php
    include "css/profil.css"
@@ -41,7 +41,7 @@ require_once "includes/dbh.inc.php";?>
 
 
 
-<div style='margin:5rem 0;' >
+<div style='margin-top:7rem;margin-bottom:2rem;' >
 <?php
 
 $idN=$_GET["id"];

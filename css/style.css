@@ -184,6 +184,7 @@ a :hover {
 .red .text-work {
   font-size: 1.5rem;
   margin: 1rem 2rem;
+ 
 }
 .work {
   display: flex;
@@ -232,7 +233,7 @@ a :hover {
   margin-top: 5px;
 }
 .creative-text {
-  padding: 2rem 0;
+  padding: 1.3rem 0;
 }
 
 .carousel-wrapper {
@@ -963,4 +964,8 @@ input#file-input + label i {
 
   color: #43b9dc;
   font-size: 3rem;
+}
+
+.lin1:hover{
+  text-decoration: underline;
 }

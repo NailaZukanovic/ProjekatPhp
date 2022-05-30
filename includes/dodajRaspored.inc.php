@@ -23,7 +23,7 @@ session_start();
     
 
   
-/*
+
 
 
 if(isEmptyDok($IdDoktor,$datum,$vreme)!==false)
@@ -37,7 +37,7 @@ if($today>$termin)
     header("location:../raspored.php?error=invaliddate");
     
     
-}*/
+}
 
 
 $servername = "localhost";

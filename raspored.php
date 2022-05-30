@@ -17,7 +17,7 @@ session_start();
     <style>
 
         <?php
-   include "style.css"
+   include "css/style.css"
         ?>
             <?php
    include "./css/raspored.css";
@@ -51,15 +51,15 @@ if (isset($_GET["error"])) {
     
     if($_GET["error"]=="praznaPolja")
     {
-        echo"<div class='danger'><p>Popunite sva polja!</p></div>";
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'><p>Popunite sva polja!</p></div>";
     }
     if($_GET["error"]=="zauzetTermin")
     {
-        echo"<div class='danger'><p>Ovaj termin vec postoji!</p></div>";
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'><p>Ovaj termin vec postoji!</p></div>";
     }
     if($_GET["error"]=="invaliddate")
     {
-        echo"<div class='danger'><p>Neispravan datum!</p></div>";
+        echo"<div style='margin-left:0;padding:1rem;' class='sredina'><p>Neispravan datum!</p></div>";
     }
  
 

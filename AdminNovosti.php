@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $jmbg=$_SESSION["jmbg"];
 
 
@@ -17,7 +17,7 @@ $jmbg=$_SESSION["jmbg"];
     <style>
 
         <?php
-   include "style.css"
+   include "css/style.css"
         ?>
         <?php
    include "css/profil.css"

@@ -22,7 +22,7 @@ $_SESSION["JmbgKor"]=$jmbg;
     <style>
 
         <?php
-   include "style.css"
+   include "css/style.css"
         ?>
             <?php
 
