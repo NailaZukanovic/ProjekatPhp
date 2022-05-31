@@ -64,7 +64,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT ImeDoktora,Datum,Vreme,JMBGdoktora FROM raspored WHERE JMBGdoktora=$JMBG;";
+$sql = "SELECT ImeDoktora,Datum,Vreme,JMBGdoktora FROM raspored WHERE JMBGdoktora=$JMBG ORDER BY Datum ASC,Vreme ASC  ;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

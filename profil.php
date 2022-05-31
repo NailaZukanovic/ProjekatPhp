@@ -503,7 +503,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "SELECT id,JMBGdoktora,ImeDoktora,Datum,Vreme FROM raspored WHERE JMBGdoktora=$p;";
+$sql = "SELECT id,JMBGdoktora,ImeDoktora,Datum,Vreme FROM raspored WHERE JMBGdoktora=$p ORDER BY Datum ASC,Vreme ASC;";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -564,10 +564,13 @@ if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                        
                         echo "<div  class='novost'><div class='div2'><img src='uploads/".$row["slika"]."' ></div><div class='div8'>
-                        <div class='div80'><p  class='naslovN'>".$row["Naslov"]."</p><p class='imed'><i class='fas fa-user-alt'></i>Dr ".PronadjiDoktora($conn,$row["JMBGkor"])."</p>
+                        <div class='div80'><p  class='naslovN'>".$row["Naslov"]."</p>";
+                    
+                        echo "<p class='imed'><i class='fas fa-user-alt'></i>Dr ".PronadjiDoktora($conn,$row["JMBGkor"])."</p>";
+                      
                         
-                        <p  class='uvod'>".substr($row["uvod"],0,270)."...</p></div>
-                           <div class='div20'><p class='ob'><span class='datumi'><i style='padding-left:1rem;' class='fas fa-clock'> Objavljena:".$row["Datum"]."</i></span><span class='span2'><a class='detalji' href='novost.php?id=".$row["id"]."'>Prikazi detalje >>></a></span></p></div>
+                      echo "<p  class='uvod'>".substr($row["uvod"],0,270)."...</p></div>
+                           <div style='padding:0.5rem 0;' class='div20'><p class='ob'><span class='datumi'><i style='padding-left:1rem;' class='fas fa-clock'> Objavljena:".$row["Datum"]."</i></span><span class='span2'><a class='detalji' href='novost.php?id=".$row["id"]."'>Prikazi detalje >>></a></span></p></div>
                         </div></div>";
                     }
                    
@@ -664,8 +667,7 @@ echo "</div>";
             }
         else
         {
-
-
+           
            
             echo"<div class='dokflex'>
                 <div class='dokflex5'>
@@ -695,10 +697,19 @@ echo "</div>";
                     while($row = $result->fetch_assoc()) {
                        
                         echo "<div  class='novost'><div class='div2'><img src='uploads/".$row["slika"]."' ></div><div class='div8'>
-                        <div class='div80'><p  class='naslovN'><span class='wd1'>".$row["Naslov"]." </span><span class='wd2' ><a onclick='return checkDelete2()' href='includes/ukloniNovost.php?id=".$row["id"]."'><i style='color:red;' class='fas fa-times'></i></a></span></p><p class='imed'><i class='fas fa-user-alt'></i>Dr ".PronadjiDoktora($conn,$row["JMBGkor"])."</p>
-                        
-                        <p  class='uvod'>".substr($row["uvod"],0,270)."...</p></div>
-                           <div class='div20'><p class='ob'><span class='datumi'><i style='padding-left:1rem;' class='fas fa-clock'> Objavljena:".$row["Datum"]."</i></span><span class='span2'><a class='detalji' href='novost.php?id=".$row["id"]."'>Prikazi detalje >>></a></span></p></div>
+                        <div class='div80'><p  class='naslovN'><span class='wd1'>".$row["Naslov"]." </span><span class='wd2' ><a onclick='return checkDelete2()' href='includes/ukloniNovost.php?id=".$row["id"]."'><i style='color:red;' class='fas fa-times'></i></a></span></p>";
+                      
+                      if(vrstaKorisnika($conn,$row["JMBGkor"])==="admin")
+                      {
+                        echo "<p class='imed'><i class='fas fa-user-alt'></i>Admin Team N Clinic</p>";
+                      }
+                      else
+                      {
+                        echo "<p class='imed'><i class='fas fa-user-alt'></i>Dr ".PronadjiDoktora($conn,$row["JMBGkor"])."</p>";
+                      }
+                     
+                      echo " <p  class='uvod'>".substr($row["uvod"],0,270)."...</p></div>
+                           <div  style='padding:0.5rem 0;' class='div20'><p class='ob'><span class='datumi'><i style='padding-left:1rem;' class='fas fa-clock'> Objavljena:".$row["Datum"]."</i></span><span class='span2'><a class='detalji' href='novost.php?id=".$row["id"]."'>Prikazi detalje >>></a></span></p></div>
                         </div></div>";
                     }
                    

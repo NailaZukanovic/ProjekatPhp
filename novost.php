@@ -84,9 +84,19 @@ $idN=$_GET["id"];
                             echo "<div class='citat'><p>'".$row["citat"]."'</p></div>";
                         }
                        
-                       echo " <p> ".$row["glavni_deo"]." </p>
-                        <p style='color:gray;' class='ob'><span class='datumi'><i style='padding-left:1rem;' class='fas fa-clock'> Objavljena:".$row["Datum"]."</i></span><span class='span2'>Dodao novost:Dr ".PronadjiDoktora($conn,$row["JMBGkor"])."</span></p>    
-                        </div>";
+                       echo " <p> ".$row["glavni_deo"]." </p>";
+                       if(vrstaKorisnika($conn,$row["JMBGkor"])==='admin')
+                       {
+                        echo "<p style='color:gray;' class='ob'><span class='datumi'><i style='padding-left:1rem;' class='fas fa-clock'> Objavljena:".$row["Datum"]."</i></span><span class='span2'>Dodao novost: Admin Team N Clinic</span></p>";
+                       }
+                       else
+                       {
+
+                        echo "<p style='color:gray;' class='ob'><span class='datumi'><i style='padding-left:1rem;' class='fas fa-clock'> Objavljena:".$row["Datum"]."</i></span><span class='span2'>Dodao novost:Dr ".PronadjiDoktora($conn,$row["JMBGkor"])." </span></p> ";
+
+                        }
+   
+                        echo " </div>";
                         
                     }
                    

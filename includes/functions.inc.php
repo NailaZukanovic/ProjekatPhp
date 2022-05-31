@@ -556,6 +556,25 @@ $conn->close();
 
 
 }
+function vrstaKorisnika($conn,$JMBGDoktora)
+{
+ 
+
+    $sql="SELECT vrsta FROM user WHERE JMBGkor=?;";
+
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("s", $JMBGDoktora);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+         return $row["vrsta"];
+    }
+
+
+$conn->close();
+
+
+}
 function PronadjiSliku($conn,$jmbgzasliku)
 {
 
@@ -600,6 +619,27 @@ function PronadjiEmail($conn,$jmbge)
 {
 
     $sql="SELECT Email FROM user WhERE JMBGkor=?;";
+
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param("s", $jmbge);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+         $pdoktor=$row['Email'];
+         return $pdoktor;
+    }
+   
+
+
+
+
+}
+
+
+function PronadjiEmailZahtev($conn,$jmbge)
+{
+
+    $sql="SELECT Email FROM zahtev WhERE JMBG=?;";
 
     $stmt = $conn->prepare($sql); 
     $stmt->bind_param("s", $jmbge);
@@ -958,7 +998,10 @@ function proveriCitat($pwd)
 {
 
    $result;
-
+    if(empty($pwd))
+    {
+        $result=false;
+    }
    if(strlen($pwd)>0 && strlen($pwd)<300) 
    {
        $result=true;

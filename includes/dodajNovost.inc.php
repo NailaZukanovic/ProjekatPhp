@@ -28,7 +28,7 @@ if (isEmptyKarton($uvod,$glavni_deo,$naslov)!==false) {
 }
 if($error===0)
 {
-    if($img_size>625000){
+    if($img_size>1250000){
       $em="File to large!";
       header("Location:../DodajNovost.php?error=largePic");
     }
