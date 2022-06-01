@@ -9,10 +9,13 @@ if(!$_SESSION['useruid'])
 }
 
 $datum=date('Y-m-d');
+$vreme=date('H:i');
+
+
 require_once './includes/functions.inc.php';
 require_once './includes/dbh.inc.php';
 
-izbrisiDatume($conn,$datum);
+izbrisiDatume($conn,$datum,$vreme);
 
 
 
@@ -44,12 +47,12 @@ izbrisiDatume($conn,$datum);
 </head>
 
 <body>
-
+    
 
 <?php
-
 include_once './komponente/header.php';
 ?>
+
 <div  class="margina">
 
 <?php
@@ -66,7 +69,8 @@ require_once "includes/dbh.inc.php";?>
                  if($_SESSION['userVrsta']==='pacijent')
                  {
                     echo"<h2>Pacijent</h2>";
-                 }
+                
+                }
                 else if($_SESSION['userVrsta']==='doktor')
                  {
                     echo"<h2>Profil doktora</h2>";

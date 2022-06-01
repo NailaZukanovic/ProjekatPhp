@@ -1071,11 +1071,11 @@ $conn->close();
 }
 
 
-function izbrisiDatume($conn,$date){
+function izbrisiDatume($conn,$date,$vreme){
 
     
-    $sql = $conn->prepare("DELETE  FROM raspored WHERE Datum <?");  
-	$sql->bind_param("s", $date); 
+    $sql = $conn->prepare("DELETE FROM raspored WHERE Datum <? OR ( Datum = ? AND Vreme < ?);");  
+	$sql->bind_param("sss", $date,$date,$vreme); 
 	$sql->execute();
 	$sql->close(); 
 	

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $jmbg=$_SESSION["jmbg"];
 
 if(!$_SESSION['useruid'])
@@ -76,7 +76,16 @@ echo "<h2  class='novostId'>Novosti</h2>";
                         echo "<div style='width:95%;border:1px dotted gray;' class='novost'><div class='div2'><img src='uploads/".$row["slika"]."' >
                         </div><div class='div8'>
                         
-                        <div class='div80'><p  class='naslovN'><span class='wd1'>".$row["Naslov"]." </span><span class='wd2' ><a onclick='return checkDelete2()' href='includes/ukloniNovost.php?id=".$row["id"]."'><i style='color:red;' class='fas fa-times'></i></a></span></p><p class='imed'><i class='fas fa-user-alt'></i>Dr ".PronadjiDoktora($conn,$row["JMBGkor"])."</p>
+                        <div class='div80'><p  class='naslovN'><span class='wd1'>".$row["Naslov"]." </span><span class='wd2' ><a onclick='return checkDelete2()' href='includes/ukloniNovost.php?id=".$row["id"]."'><i style='color:red;' class='fas fa-times'></i></a></span></p>;";
+                        if(vrstaKorisnika($conn,$row["JMBGkor"])==="admin")
+                        {
+                          echo "<p class='imed'><i class='fas fa-user-alt'></i>Admin Team N Clinic</p>";
+                        }
+                        else
+                        {
+                          echo "<p class='imed'><i class='fas fa-user-alt'></i>Dr ".PronadjiDoktora($conn,$row["JMBGkor"])."</p>";
+                        }
+                        echo"
                         
                         <p style='font-size:1.6rem;' class='uvod'>".substr($row["uvod"],0,370)."...</p></div>
                            <div class='div20'><p class='ob'><span class='datumi'><i style='padding-left:1rem;' class='fas fa-clock'> Objavljena:".$row["Datum"]."</i></span><span class='span2'><a href='novost.php?id=".$row["id"]."'>Prikazi detalje >>></a></span></p></div>
