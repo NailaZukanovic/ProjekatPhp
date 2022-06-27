@@ -37,9 +37,9 @@ include_once './komponente/header.php';
 
     <div class="container">
        <div class="main-text">
-      <span class="text1"><h2>Dobrodošli na N <span style="color:black" >Clinic</span>
+      <span class="text1"><h2>Dobrodošli na Eco <span style="color:black" >App</span>
            </h2></span>     
-        <h4>Zakažite termin kod nas!</h4>
+        <h4>Prijavite se i vi!</h4>
            
            <button  onclick="location.href = 'login.php';" class="book">Prijavi se</button>
        </div>
@@ -48,29 +48,24 @@ include_once './komponente/header.php';
 
 
 <div class="novi">
-<h2>Naše usluge</h2>
+<h2>Čime se mi bavimo</h2>
 
 <div class="poslovi">
 
 <div class="section">
-<i class="fas fa-diagnoses"></i>
-        <h3>Oftamološki dijagnostički pregledi</h3>
+<i class="fas fa-chalkboard-teacher"></i>
+        <h3>Predavanja</h3>
         <p>Oftalmološki pregledi odraslih i dece, pregledi dioptrije i pregledi za kontaktna sočiva.</p>
 </div>
 <div class="section">
-<i class="fas fa-clinic-medical"></i>
-<h3>Glaukom – Dijagnostika, lečenje, praćenje i laserske intervencijem</h3>
+<i class="fas fa-recycle"></i>
+<h3>Detaljne informacije o načinu izvođenja programa</h3>
         <p>Glaukom je oboljenje koje najčešće protiče bez simptoma, do kasne faze bolesti , kada su nastala oštećenja trajna. Ukoliko se ne leči dovodi do potpunog gubitka vida. Može se javiti u nekoliko formi, za nastanak postoji više faktora rizika, a jedan od njih je i povišen očni pritisak.</p>
 </div>
 <div class="section">
-<i class="fas fa-low-vision"></i>
-<h3>Optička koherentna tomografija (OCT)</h3>
+<i class="fas fa-clipboard-list"></i>
+<h3>Ankete kao vid pomoći</h3>
         <p>3D OCT-1 Maestro, savremena, neinvazivna i bezbedna metoda omogućava tomografsko snimanje vidnog živca, sloja retinalnih nervnih vlakana i predela makule.</p>
-</div>
-<div class="section">
-<i class="fas fa-laptop-medical"></i>
-<h3>Kompjuterizovano vidno polje</h3>
-        <p>Haag Streit OCTOPUS 600 je vidno polje nove generacije, gde savremena tehnologija olakšava pregled pacijentu, uz veću preciznost i lakše tumačenje rezultata.</p>
 </div>
 
 </div>

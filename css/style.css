@@ -68,14 +68,14 @@ a :hover {
 }
 
 .container {
-  background: url(images/eye-guy.jpeg);
+  background: url(images/josh.jpg);
   width: 100%;
 
   padding-top: 8.5rem;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 90vh;
 }
 .container .main-text {
   width: 50%;
@@ -284,20 +284,20 @@ a :hover {
 .item-1 {
   z-index: 2;
   opacity: 1;
-  background: url('images/galerija2.jpg');
+  background: url('images/plastika.jpg');
  height: 100%;
 width: 100%;
 background-size: cover;
 }
 
 .item-2 {
-  background: url('images/galerija4.jpg');
+  background: url('images/otpad.jpg');
   width: 100%;
   height: 100%;
   background-size: cover;
 }
 .item-3 {
-  background: url('images/galerija6.jpg');
+  background: url('images/smece2.jpg');
   width: 100%;
   height: 100%;
 

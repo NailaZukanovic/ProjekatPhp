@@ -80,7 +80,7 @@ if (strlen($pwd)<7 || strlen($pwd)>30) {
   exit();
   
  }
-/*
+
 
 
   $img_name=$_FILES['image']['name'];

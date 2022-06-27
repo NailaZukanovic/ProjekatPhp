@@ -22,14 +22,14 @@
 <body>
 
 <header class="header">
-        <a href="index.php" id="logo"><span>N</span> Clinic</a>
+        <a href="index.php" id="logo"><span>Eco </span>App</a>
 
 
     <div class="icons">
     <nav class="navbar">
         <a href="index.php">O nama</a>
-        <a href="Pregledi.php">Pregledi</a>
-        <a href="Novosti.php">Novosti</a>
+        <a href="Pregledi.php">Obrazovanje</a>
+        <a href="Novosti.php">Info</a>
         <a href="Kontakt.php">Kontakt</a>
         <?php
          if(isset($_SESSION["useruid"]))
